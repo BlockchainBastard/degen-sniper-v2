@@ -13,10 +13,10 @@ const Wait = async (seconds) => {
 
 const startConnection = async () => {
     app = await appHelper.load();
-    console.log("---------------- Degen Sniper ----------------");
+    console.log("Degen Sniper");
     console.log(`Token to Snipe: ${app.targetSymbol}`);
     console.log(`Amount to purchase: ${ethers.utils.formatUnits(config.PURCHASE_AMOUNT, app.baseDecimals)}`);
-    console.log("Now watching txPool for Finalize transaction...");
+    console.log("Now watching txPool for Finalize transaction");
     app.provider.on("pending", (txHash) => {
         app.provider
             .getTransaction(txHash)
@@ -35,7 +35,7 @@ const startConnection = async () => {
                         }
                     }
                     if (to === config.PRESALE_ADDRESS) {
-                        console.log(`📋  Presale transaction: ${tx.hash}`);
+                        console.log(`Presale transaction: ${tx.hash}`);
                     }
                 }
             })
@@ -57,7 +57,7 @@ const Snipe = async (gasPrice) => {
           gasPrice: gasPrice,
         }
     );
-    console.log(`🔫  Sniped: ${tx.hash}`);
+    console.log(`Sniped: ${tx.hash}`);
 }
 
 startConnection();

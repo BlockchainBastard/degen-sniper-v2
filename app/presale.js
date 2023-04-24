@@ -26,11 +26,11 @@ const checkTime = async () => {
 
 const startConnection = async () => {
     app = await appHelper.load();
-    console.log("---------------- Degen Sniper ----------------");
+    console.log("Degen Sniper");
     console.log(`Token Symbol: ${app.targetSymbol}`);
     console.log(`Presale Start Time: ${formatDateTime(config.PRESALE_START_TIME)}`);
     console.log(`Amount to purchase: ${ethers.utils.formatEther(config.PURCHASE_AMOUNT)} BNB`);
-    console.log("Waiting for start time...");
+    console.log("Waiting for start time");
     setInterval(checkTime, 1000);
 }
 
@@ -42,7 +42,7 @@ const Contribute = async () => {
           gasPrice: config.GAS_PRICE,
         }
     );
-    console.log(`🔫  Contribute: ${tx.hash}`);
+    console.log(`Contribute: ${tx.hash}`);
 }
 
 startConnection();

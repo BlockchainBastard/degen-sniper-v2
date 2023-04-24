@@ -5,7 +5,7 @@ function mnemonic() {
   try {
     return fs.readFileSync("./mnemonic.txt").toString().trim();
   } catch (e) {
-    console.log("☢️ Error: No mnemonic file found.");
+    console.log("Error: No mnemonic file found.");
     process.exit();
   }
 }

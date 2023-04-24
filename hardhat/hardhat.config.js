@@ -21,7 +21,7 @@ function mnemonic() {
   } catch (e) {
     if (defaultNetwork !== "localhost") {
       console.log(
-        "☢️ WARNING: No mnemonic file created for a deploy account. Try `yarn run generate` and then `yarn run account`."
+        "WARNING: No mnemonic file created for a deploy account. Try `yarn run generate` and then `yarn run account`."
       );
     }
   }
@@ -137,8 +137,8 @@ function debug(text) {
 task("wallet", "Create a wallet (pk) link", async (_, { ethers }) => {
   const randomWallet = ethers.Wallet.createRandom();
   const privateKey = randomWallet._signingKey().privateKey;
-  console.log("🔐 WALLET Generated as " + randomWallet.address + "");
-  console.log("🔗 http://localhost:3000/pk#" + privateKey);
+  console.log("WALLET Generated as " + randomWallet.address + "");
+  console.log("http://localhost:3000/pk#" + privateKey);
 });
 
 task("fundedwallet", "Create a wallet (pk) link and fund it with deployer?")
@@ -150,7 +150,7 @@ task("fundedwallet", "Create a wallet (pk) link and fund it with deployer?")
   .setAction(async (taskArgs, { network, ethers }) => {
     const randomWallet = ethers.Wallet.createRandom();
     const privateKey = randomWallet._signingKey().privateKey;
-    console.log("🔐 WALLET Generated as " + randomWallet.address + "");
+    console.log("WALLET Generated as " + randomWallet.address + "");
     let url = taskArgs.url ? taskArgs.url : "http://localhost:3000";
 
     let localDeployerMnemonic;
@@ -175,7 +175,7 @@ task("fundedwallet", "Create a wallet (pk) link and fund it with deployer?")
       );
       deployerWallet = deployerWallet.connect(ethers.provider);
       console.log(
-        "💵 Sending " +
+        "Sending " +
           amount +
           " ETH to " +
           randomWallet.address +
@@ -186,7 +186,7 @@ task("fundedwallet", "Create a wallet (pk) link and fund it with deployer?")
       return;
     } else {
       console.log(
-        "💵 Sending " +
+        "Sending " +
           amount +
           " ETH to " +
           randomWallet.address +
@@ -219,12 +219,12 @@ task(
     const address =
       "0x" + EthUtil.privateToAddress(wallet._privKey).toString("hex");
     console.log(
-      "🔐 Account Generated as " +
+      "Account Generated as " +
         address +
         " and set as mnemonic in packages/hardhat"
     );
     console.log(
-      "💬 Use 'yarn run account' to get more information about the deployment account."
+      "Use 'yarn run account' to get more information about the deployment account."
     );
 
     fs.writeFileSync("./" + address + ".txt", mnemonic.toString());
@@ -279,16 +279,16 @@ task(
     }
 
     console.log(
-      "⛏  Account Mined as " +
+      "Account Mined as " +
         address +
         " and set as mnemonic in packages/hardhat"
     );
     console.log(
-      "📜 This will create the first contract: " +
+      "This will create the first contract: " +
         chalk.magenta("0x" + contract_address)
     );
     console.log(
-      "💬 Use 'yarn run account' to get more information about the deployment account."
+      "Use 'yarn run account' to get more information about the deployment account."
     );
 
     fs.writeFileSync(
