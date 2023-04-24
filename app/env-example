@@ -1,0 +1,38 @@
+# Router contract to use
+ROUTER = "0x10ED43C718714eb63d5aA57B78B54704E256024E"
+
+# Token Base - typically WETH, WMATIC, WBNB
+TOKEN_BASE = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
+
+# Token Address to buy 
+TOKEN_TARGET=""
+
+# Address of the presale contract, where
+# funds are sent for the presale
+PRESALE_ADDRESS = ""
+
+# UTC EPOCH Timestmp of starting time
+# must convert to epoch value
+PRESALE_START_TIME = ""
+
+# Address of who recieves TOKEN_TARGET tokens
+RECIPIENT = ""
+
+# Amount to purcahse [in Ether Value]
+PURCHASE_AMOUNT = "0.01"
+
+# Minimum Amount of TOKEN_TARGET to accept when sniping liquidity launches
+# defaults to 0
+AMOUNT_OUT_MIN = "0"
+
+# Number of seconds to delay after detecting finalize TX before buying
+BUY_DELAY = "0"
+
+# Number of seconds swap transaction is valid
+DEADLINE = "15"
+
+# Gas limit rate - a high value is recommended
+GAS_LIMIT = "2000000"
+
+# Websocket RPC URL
+WS = "ws://127.0.0.1:8546/"

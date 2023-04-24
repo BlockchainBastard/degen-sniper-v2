@@ -1,0 +1,5 @@
+root = true
+
+[app/**.js{,x}]
+indent_style = space
+indent_size = 4
